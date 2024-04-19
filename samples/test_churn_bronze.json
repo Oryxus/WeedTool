@@ -1,0 +1,670 @@
+[
+    {
+        "datasetName": "EXCEL/CARD_CURR_CODE",
+        "path": "bronze/RETAIL/EXCEL/CARD_CURR_CODE/data",
+        "fileType": "parquet",
+        "sourceSystem": "EXCEL",
+        "domain": "RETAIL",
+        "description": "The table provides currency codes matched with their respective full names for easy reference purposes.",
+        "dataCustodian": "DAC",
+        "qualifiedName": "CARD_CURR_CODE.table@EXCEL.bronze.RETAIL",
+        "columns": [
+            {
+                "columnName": "CURR_ALP_CODE",
+                "tableName": "CARD_CURR_CODE",
+                "description": "The currency code of transaction in form of atmost 4 characters sequence (e.g VND).",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CURR_ALP_CODE.CARD_CURR_CODE.column@EXCEL.bronze.RETAIL"
+            },
+            {
+                "columnName": "CURR_CODE",
+                "tableName": "CARD_CURR_CODE",
+                "description": "The currency code of transaction in form of 3 digits sequence (e.g 704: VND).",
+                "key": true,
+                "dataType": "int",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CURR_CODE.CARD_CURR_CODE.column@EXCEL.bronze.RETAIL"
+            },
+            {
+                "columnName": "CURR_DESC",
+                "tableName": "CARD_CURR_CODE",
+                "description": "The full name of currency of a transaction.",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CURR_DESC.CARD_CURR_CODE.column@EXCEL.bronze.RETAIL"
+            }
+        ]
+    },
+    {
+        "datasetName": "PCR/CUSTOW",
+        "path": "bronze/RISK/PCR/CUSTOW/data",
+        "fileType": "parquet",
+        "sourceSystem": "PCR",
+        "domain": "RISK",
+        "description": "The table includes customers' general information (e.g: Age, Date of Birth..).",
+        "dataCustodian": "DAC",
+        "qualifiedName": "CUSTOW.table@PCR.bronze.RISK",
+        "columns": [
+            {
+                "columnName": "CFCIFN",
+                "tableName": "CUSTOW",
+                "description": "Masked CIF number of a customer.",
+                "key": true,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CFCIFN.CUSTOW.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "CFCUST",
+                "tableName": "CUSTOW",
+                "description": "Classification's or segment's code of customers (e.g., 100, 200, etc.)",
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CFCUST.CUSTOW.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "DATE8",
+                "tableName": "CUSTOW",
+                "description": "Date when records was created in data source in format yyyymmdd.",
+                "key": true,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "DATE8.CUSTOW.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "CFNA1",
+                "tableName": "CUSTOW",
+                "description": "Masked customer's full name.",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CFNA1.CUSTOW.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "CFSSNO",
+                "tableName": "CUSTOW",
+                "description": "Masked customer's citizen identification or passport number.",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CFSSNO.CUSTOW.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "CFSEX",
+                "tableName": "CUSTOW",
+                "description": "Customer's gender represented by single uppercase letter (F: female, M: male)",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CFSEX.CUSTOW.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "CFBIRD",
+                "tableName": "CUSTOW",
+                "description": "Customer's date of birth in the format yyyymmdd.",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CFBIRD.CUSTOW.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "CUTHR14",
+                "tableName": "CUSTOW",
+                "description": "Code of customer's priority type (e.g P1: Large Deposit Balance Priority, P2: Large Loan Balance Priority, P3: Large Card Transaction Amount Priority, etc.).",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CUTHR14.CUSTOW.column@PCR.bronze.RISK"
+            }  
+        ]
+    },
+    {
+        "datasetName": "PCR/TYGIACD_SIG",
+        "path": "bronze/RISK/PCR/TYGIACD_SIG/data",
+        "fileType": "parquet",
+        "sourceSystem": "PCR",
+        "domain": "RISK",
+        "description": "The table includes VND exchange rate for various currencies",
+        "dataCustodian": "DAC",
+        "qualifiedName": "TYGIACD_SIG.table@PCR.bronze.RISK",
+        "columns": [
+            {
+                "columnName": "NTE",
+                "tableName": "TYGIACD_SIG",
+                "description": "The currency code of transaction in form of 3 characters sequence (e.g VND).",
+                "key": true,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "NTE.TYGIACD_SIG.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "THANG",
+                "tableName": "TYGIACD_SIG",
+                "description": "Date of the data capture or data entry in the format yyyymmdd.",
+                "key": true,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "THANG.TYGIACD_SIG.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "TYGIA",
+                "tableName": "TYGIACD_SIG",
+                "description": "Vietnamese Dong's exchange rate.",
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "TYGIA.TYGIACD_SIG.column@PCR.bronze.RISK"
+            }
+        ]
+    },
+    {
+        "datasetName": "PCR/ACC_SUMMARY",
+        "path": "bronze/RISK/PCR/ACC_SUMMARY/data",
+        "fileType": "parquet",
+        "sourceSystem": "PCR",
+        "domain": "RISK",
+        "description": "This table summarizes transaction information related to accounts associated with both TA's and TM's in the PCR system.",
+        "dataCustodian": "DAC",
+        "qualifiedName": "ACC_SUMMARY.table@PCR.bronze.RISK",
+        "columns": [
+            {
+                "columnName": "BRN",
+                "tableName": "ACC_SUMMARY",
+                "description": "Code of a branch managing an account.",
+                "key": true,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "BRN.ACC_SUMMARY.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "CIF",
+                "tableName": "ACC_SUMMARY",
+                "description": "Masked CIF number of a customer.",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CIF.ACC_SUMMARY.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "DATE8",
+                "tableName": "ACC_SUMMARY",
+                "description": "Date when records was created in data source in format yyyymmdd.",
+                "key": true,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "DATE8.ACC_SUMMARY.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "GTGD_CO",
+                "tableName": "ACC_SUMMARY",
+                "description": "Amount of money transfered into the payment account.",
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "GTGD_CO.ACC_SUMMARY.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "SODU",
+                "tableName": "ACC_SUMMARY",
+                "description": "Account balance at the end of the month.",
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "SODU.ACC_SUMMARY.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "TK",
+                "tableName": "ACC_SUMMARY",
+                "description": "Masked account number for a TA/TM account.",
+                "key": true,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "TK.ACC_SUMMARY.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "TKTYPE",
+                "tableName": "ACC_SUMMARY",
+                "description": "Data domain classification code represented by single uppercase letter (e.g D: current account, S: saving account, T: time account, L: loan).",
+                "key": true,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "TKTYPE.ACC_SUMMARY.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "TB_SD_THANG",
+                "tableName": "ACC_SUMMARY",
+                "description": "The average balance of the account in that month.",
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "TB_SD_THANG.ACC_SUMMARY.column@PCR.bronze.RISK"
+            }
+        ]
+    },
+    {
+        "datasetName": "PCR/SIL_TL",
+        "path": "bronze/RISK/PCR/SIL_TL/data",
+        "fileType": "parquet",
+        "sourceSystem": "PCR",
+        "domain": "RISK",
+        "description": "The table stores information of all kind accounts for each customers.",
+        "dataCustodian": "DAC",
+        "qualifiedName": "SIL_TL.table@PCR.bronze.RISK",
+        "columns": [
+            {
+                "columnName": "BRN",
+                "tableName": "SIL_TL",
+                "description": "Code of a branch managing an account.",
+                "key": true,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "BRN.SIL_TL.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "DATE8",
+                "tableName": "SIL_TL",
+                "description": "Date when records was created in data source in format yyyymmdd.",
+                "key": true,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "DATE8.SIL_TL.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "NT4",
+                "tableName": "SIL_TL",
+                "description": "The currency code of transaction in form of atmost 4 characters sequence (e.g VND).",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "NT4.SIL_TL.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "TK",
+                "tableName": "SIL_TL",
+                "description": "Masked account number for an account.",
+                "key": true,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "TK.SIL_TL.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "TKTYPE",
+                "tableName": "SIL_TL",
+                "description": "Data domain classification code represented by single uppercase letter (e.g D: current account, S: saving account, T: time account, L: loan).",
+                "key": true,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "TKTYPE.SIL_TL.column@PCR.bronze.RISK"
+            }
+        ]
+    },
+    {
+        "datasetName": "QUANT_CCARD/SCMCACCP",
+        "path": "bronze/RISK/QUANT_CCARD/SCMCACCP/data",
+        "fileType": "parquet",
+        "sourceSystem": "QUANT_CCARD",
+        "domain": "RISK",
+        "description": "The table containing information about credit and international debit card accounts in the QUANT_CCARD system.",
+        "dataCustodian": "DAC",
+        "qualifiedName": "SCMCACCP.table@QUANT_CCARD.bronze.RISK",
+        "columns": [
+            {
+                "columnName": "CRDACCT_BLK_CODE",
+                "tableName": "SCMCACCP",
+                "description": "Code indicating if the card is blocked or restricted (e.g: R, AR, AA) represented by atmost 2 characters.",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CRDACCT_BLK_CODE.SCMCACCP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "CRDACCT_COR_CUST_NBR",
+                "tableName": "SCMCACCP",
+                "description": "Masked CIF number for organizational or corporate customers.",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CRDACCT_COR_CUST_NBR.SCMCACCP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "CRDACCT_CUST_NBR",
+                "tableName": "SCMCACCP",
+                "description": "Masked CIF number for individual customers.",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CRDACCT_CUST_NBR.SCMCACCP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "CRDACCT_DTE_OPEN",
+                "tableName": "SCMCACCP",
+                "description": "Date when the card account was opened in the format yyyymmdd.",
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CRDACCT_DTE_OPEN.SCMCACCP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "CRDACCT_NBR",
+                "tableName": "SCMCACCP",
+                "description": "Masked account number for a card account.",
+                "key": true,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CRDACCT_NBR.SCMCACCP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "CRDACCT_PDT_NBR",
+                "tableName": "SCMCACCP",
+                "description": "Code identifying the type or category of the card. The code is represented by atmost 3 digits number",
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CRDACCT_PDT_NBR.SCMCACCP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "DATE8",
+                "tableName": "SCMCACCP",
+                "description": "Date when records was created in data source in format yyyymmdd.",
+                "key": true,
+                "dataType": "int",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "DATE8.SCMCACCP.column@QUANT_CCARD.bronze.RISK"
+            }
+        ]
+    },
+    {
+        "datasetName": "QUANT_CCARD/SCMCARDP",
+        "path": "bronze/RISK/QUANT_CCARD/SCMCARDP/data",
+        "fileType": "parquet",
+        "sourceSystem": "QUANT_CCARD",
+        "domain": "RISK",
+        "description": "The table of credit and international debit card information located within QUANT_CCARD.",
+        "dataCustodian": "DAC",
+        "qualifiedName": "SCMCARDP.table@QUANT_CCARD.bronze.RISK",
+        "columns": [
+            {
+                "columnName": "CARD_ACCT_NBR",
+                "tableName": "SCMCARDP",
+                "description": "Masked account number for a card account.",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CARD_ACCT_NBR.SCMCARDP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "CARD_BLK_CODE",
+                "tableName": "SCMCARDP",
+                "description": "Code indicating if the card is blocked or restricted (e.g: R, AR, AA) represented by atmost 2 characters.",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CARD_BLK_CODE.SCMCARDP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "CARD_DTE_OPEN",
+                "tableName": "SCMCARDP",
+                "description": "Date when the card was opened in the format yyyymmdd",
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CARD_DTE_OPEN.SCMCARDP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "CARD_EXP_DATE",
+                "tableName": "SCMCARDP",
+                "description": "Date when the card expires in the format mmyy",
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CARD_EXP_DATE.SCMCARDP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "CARD_NBR",
+                "tableName": "SCMCARDP",
+                "description": "Masked card number",
+                "key": true,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CARD_NBR.SCMCARDP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "DATE8",
+                "tableName": "SCMCARDP",
+                "description": "Date when records was created in data source in format yyyymmdd.",
+                "key": true,
+                "dataType": "int",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "DATE8.SCMCARDP.column@QUANT_CCARD.bronze.RISK"
+            }
+        ]
+    },
+    {
+        "datasetName": "QUANT_CCARD/SCMOLSTP",
+        "path": "bronze/RISK/QUANT_CCARD/SCMOLSTP/data",
+        "fileType": "parquet",
+        "sourceSystem": "QUANT_CCARD",
+        "domain": "RISK",
+        "description": "The table of bank statement report for transactions made by credit and international debit card accounts in the QUANT_CCARD system.",
+        "dataCustodian": "DAC",
+        "qualifiedName": "SCMOLSTP.table@QUANT_CCARD.bronze.RISK",
+        "columns": [
+            {
+                "columnName": "OLST_TXN_ACCT_NBR",
+                "tableName": "SCMOLSTP",
+                "description": "Masked account number for a card account.",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "OLST_TXN_ACCT_NBR.SCMOLSTP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "OLST_TXN_AMT",
+                "tableName": "SCMOLSTP",
+                "description": "Total transaction amount in a month.",
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "OLST_TXN_AMT.SCMOLSTP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "OLST_TXN_CARD_NBR",
+                "tableName": "SCMOLSTP",
+                "description": "Masked card number for a card account.",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "OLST_TXN_CARD_NBR.SCMOLSTP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "OLST_TXN_CODE",
+                "tableName": "SCMOLSTP",
+                "description": "Code representing the type of transaction in the format of 4 sequential digits (i.e <dddd>).",
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "OLST_TXN_CODE.SCMOLSTP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "OLST_TXN_CURR_CODE",
+                "tableName": "SCMOLSTP",
+                "description": "The currency code of transaction in form of 3 digits sequence (e.g 704: Vietnam Dong)",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "OLST_TXN_CURR_CODE.SCMOLSTP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "OLST_TXN_DTE",
+                "tableName": "SCMOLSTP",
+                "description": "Date when a transaction occurred in the format yyyymmdd.",
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "OLST_TXN_DTE.SCMOLSTP.column@QUANT_CCARD.bronze.RISK"
+            },
+            {
+                "columnName": "OLST_TXN_POSTING_DTE",
+                "tableName": "SCMOLSTP",
+                "description": "Date when the transaction was recorded in the system in the format yyyymmdd.",
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "OLST_TXN_POSTING_DTE.SCMOLSTP.column@QUANT_CCARD.bronze.RISK"
+            }
+        ]
+    },
+    {
+        "datasetName": "PCR/ACCTOW",
+        "path": "bronze/RISK/PCR/ACCTOW/data",
+        "fileType": "parquet",
+        "sourceSystem": "PCR",
+        "domain": "RISK",
+        "description": "The table containing information about loan, trade finance, overdraft accounts.",
+        "dataCustodian": "DAC",
+        "qualifiedName": "ACCTOW.table@PCR.bronze.RISK",
+        "columns": [
+            {
+                "columnName": "SRCSTM",
+                "tableName": "ACCTOW",
+                "description": "Source system where data is from, is used to differentiate account types.",
+                "key": true,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "SRCSTM.ACCTOW.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "CIFNO",
+                "tableName": "ACCTOW",
+                "description": "Masked CIF number of a customer.",
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CIFNO.ACCTOW.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "DATE8",
+                "tableName": "ACCTOW",
+                "description": "Date when records was created in data source in format yyyymmdd.",
+                "key": true,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "DATE8.ACCTOW.column@PCR.bronze.RISK"
+            },           
+            {
+                "columnName": "ACCTNO",
+                "tableName": "ACCTOW",
+                "description": "Masked account number for an account.",
+                "key": true,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "ACCTNO.ACCTOW.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "CURTYP",
+                "tableName": "ACCTOW",
+                "description": "The currency code in form of 3 characters sequence (e.g VND).",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CURTYP.ACCTOW.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "LNBAL",
+                "tableName": "ACCTOW",
+                "description": "Principal balance of a Loan Account at the end of the month.",   
+                "key": false,
+                "dataType": "float",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "LNBAL.ACCTOW.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "TYPE",
+                "tableName": "ACCTOW",
+                "description": "Product type of account.",
+                "key": true,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "TYPE.ACCTOW.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "AFCPNO",
+                "tableName": "ACCTOW",
+                "description": "",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "AFCPNO.ACCTOW.column@ACCTOW.column@PCR.bronze.RISK"
+            },
+            {
+                "columnName": "PRDCOD",
+                "tableName": "ACCTOW",
+                "description": "",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "PRDCOD.ACCTOW.column@PCR.bronze.RISK"
+            }
+        ]
+    }
+]

@@ -1,0 +1,64 @@
+[
+    {
+        "datasetName": "REF_BRANCH_CODE",
+        "path": "silver/references/REF_BRANCH_CODE/data",
+        "fileType": "delta",
+        "domain": "",
+        "sourceSystem": "",
+        "description": "The referrence table provides branch codes, details down to transaction offices of branches.",
+        "dataCustodian": "DAC",
+        "qualifiedName": "REF_BRANCH_CODE.table@silver.VCB",
+        "columns": [
+            {
+                "columnName": "BRANCH_CODE",
+                "tableName": "REF_BRANCH_CODE",
+                "description": "The branch codes in form of 3 to 5 digits sequence, the first 3 digits represent the branch code, the last 2 digits represent the transaction office code.",
+                "key": true,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "BRANCH_CODE.REF_BRANCH_CODE.column@silver.VCB"
+            },
+            {
+                "columnName": "REGION",
+                "tableName": "REF_BRANCH_CODE",
+                "description": "The geographic region of the branch.",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "REGION.REF_BRANCH_CODE.column@silver.VCB"
+            },
+            {
+                "columnName": "RECORD_CREATION_DATE",
+                "tableName": "REF_BRANCH_CODE",
+                "description": "Date when records was created in data source in format yyyymmdd.",
+                "key": true,
+                "dataType": "date",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "RECORDC_CREATION_DATE.REF_BRANCH_CODE.column@silver.VCB"
+            },
+            {
+                "columnName": "START_TIME",
+                "tableName": "REF_BRANCH_CODE",
+                "description": "SCD type 2 column effective time",
+                "key": false,
+                "dataType": "timestamp",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "START_TIME.REF_BRANCH_CODE.column@silver.VCB"
+            },
+            {
+                "columnName": "END_TIME",
+                "tableName": "REF_BRANCH_CODE",
+                "description": "SCD type 2 column expired time",
+                "key": false,
+                "dataType": "timestamp",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "END_TIME.REF_BRANCH_CODE.column@silver.VCB"
+            }
+        ]
+    }
+]

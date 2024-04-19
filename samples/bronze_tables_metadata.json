@@ -1,0 +1,243 @@
+[
+  {
+    "name": "CARD_CURR_CODE",
+    "path": "model/bronze/RETAIL/EXCEL/CARD_CURR_CODE/gx",
+    "columns": [
+      "CURR_ALP_CODE",
+      "CURR_CODE",
+      "CURR_DESC"
+    ],
+    "keys": [
+      "CURR_CODE"
+    ],
+    "expectation_suite": "CARD_CURR_CODE_expectation_suite"
+  },
+  {
+    "name": "DVGS",
+    "path": "model/bronze/RETAIL/EXCEL/DVGS/gx",
+    "columns": [
+      "KHU_VUC",
+      "MA_DVGS_5_SO"
+    ],
+    "keys": [
+      "MA_DVGS_5_SO"
+    ],
+    "expectation_suite": "DVGS_expectation_suite"
+  },
+  {
+    "name": "RTOM_CRD_CR_RTL_DTLS_NEW",
+    "path": "model/bronze/RETAIL/RTOM/RTOM_CRD_CR_RTL_DTLS_NEW/gx",
+    "columns": [
+      "CIF_MASK",
+      "DATE_TIME",
+      "LOAIHINHCOQUANDANGCONGTAC",
+      "SONGUOIPHUTHUOC",
+      "THOIGIANLAMVIECLVHT",
+      "TINHCHATCONGVIECHIENTAI",
+      "TINHTRANGHONNHAN",
+      "TINHTRANGSOHUUNHA",
+      "TONGTHUNHAPHANGTHANG"
+    ],
+    "keys": [
+      "CIF_MASK",
+      "DATE_TIME"
+    ],
+    "expectation_suite": "RTOM_CRD_CR_RTL_DTLS_NEW_expectation_suite"
+  },
+  {
+    "name": "RTOM_CR_PD_BANLE",
+    "path": "model/bronze/RETAIL/RTOM/RTOM_CR_PD_BANLE/gx",
+    "columns": [
+      "CIF_MASK",
+      "LOAIHINHCOQUANDANGCONGTAC",
+      "MODIFIEDDATE",
+      "SONGUOIPHUTHUOC",
+      "THOIGIANLAMVIECTRONGLINHVUCHT",
+      "TINHCHATCVHT",
+      "TINHTRANGHONNHAN",
+      "TINHTRANGNHAO",
+      "TONGTHUNHAPHANGTHANG"
+    ],
+    "keys": [
+      "CIF_MASK",
+      "MODIFIEDDATE"
+    ],
+    "expectation_suite": "RTOM_CR_PD_BANLE_expectation_suite"
+  },
+  {
+    "name": "RTOM_CUST_MSTR_DTLS_ALL",
+    "path": "model/bronze/RETAIL/RTOM/RTOM_CUST_MSTR_DTLS_ALL/gx",
+    "columns": [
+      "CIF_MASK",
+      "CUS_GEN",
+      "CUTYP",
+      "IS_BANCAS",
+      "IS_CRE_CRD",
+      "IS_DEB_CRD",
+      "IS_USE_DOMS_DEB_CRD",
+      "PRIO_RNK",
+      "RECORD_CREATION_DATE"
+    ],
+    "keys": [
+      "CIF_MASK",
+      "RECORD_CREATION_DATE"
+    ],
+    "expectation_suite": "RTOM_CUST_MSTR_DTLS_ALL_expectation_suite"
+  },
+  {
+    "name": "RTOM_PR",
+    "path": "model/bronze/RETAIL/RTOM/RTOM_PR/gx",
+    "columns": [
+      "AVG_AMT_3M",
+      "CIF_MASK",
+      "RECORD_CREATION_DATE"
+    ],
+    "keys": [
+      "CIF_MASK",
+      "RECORD_CREATION_DATE"
+    ],
+    "expectation_suite": "RTOM_PR_expectation_suite"
+  },
+  {
+    "name": "ACCTOW",
+    "path": "model/bronze/RISK/PCR/ACCTOW/gx",
+    "columns": [
+      "ACCTNO",
+      "CIFNO",
+      "CURTYP",
+      "DATE8",
+      "LNBAL",
+      "SRCSTM",
+      "TYPE"
+    ],
+    "keys": [
+      "ACCTNO",
+      "DATE8",
+      "SRCSTM",
+      "TYPE"
+    ],
+    "expectation_suite": "ACCTOW_expectation_suite"
+  },
+  {
+    "name": "ACC_SUMMARY",
+    "path": "model/bronze/RISK/PCR/ACC_SUMMARY/gx",
+    "columns": [
+      "BRN",
+      "CIF",
+      "DATE8",
+      "GTGD_CO",
+      "SODU",
+      "TB_SD_THANG",
+      "TK",
+      "TKTYPE"
+    ],
+    "keys": [
+      "BRN",
+      "DATE8",
+      "TK",
+      "TKTYPE"
+    ],
+    "expectation_suite": "ACC_SUMMARY_expectation_suite"
+  },
+  {
+    "name": "CUSTOW",
+    "path": "model/bronze/RISK/PCR/CUSTOW/gx",
+    "columns": [
+      "CFBIRD",
+      "CFCIFN",
+      "CFCUST",
+      "CFNA1",
+      "CFSEX",
+      "CFSSNO",
+      "CUTHR14",
+      "DATE8"
+    ],
+    "keys": [
+      "CFCIFN",
+      "DATE8"
+    ],
+    "expectation_suite": "CUSTOW_expectation_suite"
+  },
+  {
+    "name": "SIL_TL",
+    "path": "model/bronze/RISK/PCR/SIL_TL/gx",
+    "columns": [
+      "BRN",
+      "DATE8",
+      "NT4",
+      "TK",
+      "TKTYPE"
+    ],
+    "keys": [
+      "BRN",
+      "DATE8",
+      "TK",
+      "TKTYPE"
+    ],
+    "expectation_suite": "SIL_TL_expectation_suite"
+  },
+  {
+    "name": "TYGIACD_SIG",
+    "path": "model/bronze/RISK/PCR/TYGIACD_SIG/gx",
+    "columns": [
+      "NTE",
+      "THANG",
+      "TYGIA"
+    ],
+    "keys": [
+      "NTE",
+      "THANG"
+    ],
+    "expectation_suite": "TYGIACD_SIG_expectation_suite"
+  },
+  {
+    "name": "SCMCACCP",
+    "path": "model/bronze/RISK/QUANT_CCARD/SCMCACCP/gx",
+    "columns": [
+      "CRDACCT_BLK_CODE",
+      "CRDACCT_COR_CUST_NBR",
+      "CRDACCT_CUST_NBR",
+      "CRDACCT_DTE_OPEN",
+      "CRDACCT_NBR",
+      "CRDACCT_PDT_NBR",
+      "DATE8"
+    ],
+    "keys": [
+      "CRDACCT_NBR",
+      "DATE8"
+    ],
+    "expectation_suite": "SCMCACCP_expectation_suite"
+  },
+  {
+    "name": "SCMCARDP",
+    "path": "model/bronze/RISK/QUANT_CCARD/SCMCARDP/gx",
+    "columns": [
+      "CARD_ACCT_NBR",
+      "CARD_BLK_CODE",
+      "CARD_DTE_OPEN",
+      "CARD_EXP_DATE",
+      "CARD_NBR",
+      "DATE8"
+    ],
+    "keys": [
+      "CARD_NBR",
+      "DATE8"
+    ],
+    "expectation_suite": "SCMCARDP_expectation_suite"
+  },
+  {
+    "name": "SCMOLSTP",
+    "path": "model/bronze/RISK/QUANT_CCARD/SCMOLSTP/gx",
+    "columns": [
+      "OLST_TXN_ACCT_NBR",
+      "OLST_TXN_AMT",
+      "OLST_TXN_CARD_NBR",
+      "OLST_TXN_CODE",
+      "OLST_TXN_CURR_CODE",
+      "OLST_TXN_DTE",
+      "OLST_TXN_POSTING_DTE"
+    ],
+    "keys": [],
+    "expectation_suite": "SCMOLSTP_expectation_suite"
+  }
+]

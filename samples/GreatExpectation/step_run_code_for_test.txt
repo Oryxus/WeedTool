@@ -1,0 +1,13 @@
+1. Add this function following the path:
+src -> metadata_tool -> core -> entities -> table.py ->
+def to_dict(self) -> Dict[str, Any]:
+        """
+        Convert TableEntity to a dictionary.
+ 
+        Returns:
+            Dict[str, Any]: A dictionary representation of the TableEntity.
+        """
+        entity_dict = super().to_dict()
+        entity_dict[COLUMNS] = self.columns
+ 
+        return entity_dict
