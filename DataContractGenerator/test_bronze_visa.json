@@ -1,0 +1,50 @@
+[
+    {
+        "datasetName": "VISA/IBTRANSFERLOG",
+        "path": "bronze/RETAIL/VISA/IBTRANSFERLOG/data",
+        "fileType": "parquet",
+        "sourceSystem": "VISA",
+        "domain": "RETAIL",
+        "description": "The table contains transaction details in and out of system via Napas.",
+        "dataCustodian": "DAC",
+        "dataPeriod": ["2019-01-31", "2020-07-31"],
+        "frequency": "Monthly",
+        "dataRetention": "End of month snapshot",
+        "nameFormat": "IBTRANSFERLOG_MMYY",
+        "dataProcessingType": "Batch",
+        "qualifiedName": "IBTRANSFERLOG.table@VISA.bronze.RETAIL",
+        "columns": [
+            {
+                "columnName": "THANG",
+                "tableName": "IBTRANSFERLOG",
+                "description": "The currency code of transaction in form of atmost 4 characters sequence (e.g VND).",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "THANG.IBTRANSFERLOG.column@VISA.bronze.RETAIL"
+            },
+            {
+                "columnName": "CIF",
+                "tableName": "IBTRANSFERLOG",
+                "description": "The currency code of transaction in form of 3 digits sequence (e.g 704: VND).",
+                "key": true,
+                "dataType": "int",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "CIF.IBTRANSFERLOG.column@VISA.bronze.RETAIL"
+            },
+            {
+                "columnName": "MA_LOAI_GD",
+                "tableName": "IBTRANSFERLOG",
+                "description": "The full name of currency of a transaction.",
+                "key": false,
+                "dataType": "string",
+                "glossaryTerm": "",
+                "dataQuality": "",
+                "qualifiedName": "MA_LOAI_GD.IBTRANSFERLOG.column@VISA.bronze.RETAIL"
+            }
+        ]
+    }
+]    
+    

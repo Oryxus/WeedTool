@@ -27,7 +27,8 @@ def convert_ordered_table(data: dict) -> OrderedDict:
 
     """
     fields = ["name", "description", "dataCustodian",
-              "sourceSystem", "path", "fileType", "qualifiedName"]
+              "sourceSystem", "path", "fileType", "dataPeriod", 
+              "frequency", "dataRetention", "nameFormat", "dataProcessingType", "qualifiedName"]
 
     items = []
 
@@ -199,6 +200,11 @@ def get_attr_by_table_type(table_type: str, table: object) -> tuple:
             "sourceSystem": table["sourceSystem"],
             "description": table["description"],
             "dataCustodian": table["dataCustodian"],
+            "dataPeriod": table["dataPeriod"],
+            "frequency": table["frequency"],
+            "dataRetention": table["dataRetention"],
+            "nameFormat": table["nameFormat"],
+            "dataProcessingType": table["dataProcessingType"],
         }
     elif table_type == "ref":
         attrs = {
@@ -321,17 +327,17 @@ def write_all(
 
 if __name__ == "__main__":
     # Add just file path
-    fp = "./samples/test_bancas_bronze.json"
+    fp = "./samples/test_bronze_visa.json"
     fp1 = "./samples/test_bancas_silver.json"
     fp2 = "./samples/test_bancas_ref.json"
     # Adjust kind of table
     kind = "dataset"
-    # path = "./model/bronze"
+    path = "./model/bronze"
     kind1 = "hub"
     path1 = "./model/silver/hubs"
     kind2 = "ref"
     path2 = "./model/silver/references"
     # Write to files
-    # write_all(fp, path, kind)  # Bronze
+    write_all(fp, path, kind)  # Bronze
     # write_all(fp1, path1, kind1)  # Silver
-    write_all(fp2, path2, kind2)  # Ref
+    # write_all(fp2, path2, kind2)  # Ref
