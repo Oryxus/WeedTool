@@ -30,8 +30,8 @@ def write_expectation(tables_metadata_path: str, null_columns: list) -> None:
 
 if __name__ == "__main__":
     #set up table name
-    table_names = ["DIGIBANK"]
-    null_columns = ['BR_DIM_ID', 'DIM_TRANS_CHN_ID']
+    table_names = ["RTOM_DIGI_ALL_USERS", "RTOM_EB_TRAN_MTHLY"]
+    null_columns = ['CIF_MASK', 'DIGI_STATUS', "MONTH"]
 
     table_metadata = TablesMetadata(table_names)
 

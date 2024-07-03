@@ -62,11 +62,13 @@ class ExpectationCases:
         """
         for item in self.tables_metadata:
             expectation_suite_name = item.get(EXPECTATION_SUITE)
-            columns_set = self.null_columns
+            columns_set = item.get(COLUMNS)
             context_root_dir = item.get(PATH)
             gx = GreatExpectations(context_root_dir, expectation_suite_name)
 
-            for column in columns_set:
+            null_columns = [column for column in columns_set if column in self.null_columns]
+
+            for column in null_columns:
                 # setup "kwargs" value
                 kwargs = KWARGS_COLUMN_NOT_NULL_OR_UNIQUE.copy()
                 kwargs[COLUMN] = kwargs[COLUMN].format(column)
