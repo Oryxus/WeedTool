@@ -1,10 +1,10 @@
-from src.metadata_tool.core.platform.common.configs import BRONZE, SILVER
-import json
-from src.metadata_tool.services.metadata_lookup.dictionary import DictionaryService
-from src.metadata_tool.core.platform.filesystem import EntityFileSystem
 from constant import *
 import sys
 sys.path.append(BASE_PATH)
+from src.metadata_tool.core.platform.common.configs import BRONZE
+import json
+from src.metadata_tool.services.metadata_lookup.dictionary import DictionaryService
+from src.metadata_tool.core.platform.filesystem import EntityFileSystem
 
 
 class TablesMetadata():
@@ -12,24 +12,16 @@ class TablesMetadata():
     Initial a TablesMetadata object to get table metadata of a sppecific tier
     """
 
-    def __init__(self, dict_service: DictionaryService, tables_name: list) -> None:
+    def __init__(self, table_names: list) -> None:
         """
         Args:
             dict_service (DictionaryService): a DictionaryService object
             entity_filesys (EntityFileSystem): a EntityFileSystem
-            tier (str): The tier for the service (BRONZE, SILVER and GOLD)
+            table_names (list): a list including table names want to create great expectation
         """
-        self.dict_service = dict_service
-        self.tables_name = tables_name
-
-    def get_tables_name(self) -> list:
-        """
-        Get tables name from a Medallion tier base on tables path
-
-        Returns:
-            list: the list of names of tables
-        """
-        return self.tables_name
+        self.dict_service = DictionaryService(BASE_PATH, BRONZE)
+        self.entity_filesys = EntityFileSystem(BASE_PATH, BRONZE)
+        self.table_names = table_names
 
     def get_tables_metadata(self) -> list:
         """Get tables metadata by name of tables
@@ -38,7 +30,7 @@ class TablesMetadata():
             list: a list including tables metadata
         """
         tables_metadata = []
-        for name in self.get_tables_name():
+        for name in self.table_names:
             # get metadata each table by name
             metadata = self.dict_service.get_table_metadata_dict(name)
             tables_metadata.append(metadata)
@@ -46,10 +38,10 @@ class TablesMetadata():
 
     def add_expectation_suite_column(self, tables_metadata: list) -> list:
         """
-        Add "expectation_suite" column to sub tables metadata
+        Add "expectation_suite" column to sub-tables metadata
 
         Returns:
-            list: a sub tables metdata was added Expectaion_suite column
+            list: a sub-tables metdata was added Expectaion_suite column
         """
         for table in tables_metadata:
             table_name = table[NAME]

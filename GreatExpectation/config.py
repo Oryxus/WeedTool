@@ -20,12 +20,19 @@ META_COMPOUND_UNIQUE = {
     }
 }
 
+META_COLUMN_VALUE_UNIQUE = {
+    "notes": {
+        "content": "Expect each {} column value to be unique",
+        "format": "markdown"
+    }
+}
+
 # Kwargs parameter
 KWARGS_COlUMNS_MATCH_SET = {
     "column_set": {}
 }
 
-KWARGS_COLUMN_NOT_NULL = {
+KWARGS_COLUMN_NOT_NULL_OR_UNIQUE = {
     "column": "{}",
     "mostly": 1.0
 }

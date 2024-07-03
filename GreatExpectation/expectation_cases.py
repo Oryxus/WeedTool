@@ -1,21 +1,23 @@
-from great_expectations_class import GreatExpectations
+from gx import GreatExpectations
 import json
 from constant import *
 from config import *
 import copy
 
 
-class AutoExpectations:
+class ExpectationCases:
     """
     Object including expectation type for tables, columns
     """
 
-    def __init__(self, path: str) -> None:
+    def __init__(self, path: str, null_columns: list) -> None:
         """
         Parameters: 
             - path(str): path to the json file including tables metadata
+            - null_columns(list): a list including columns that want to check if they are null
         """
         self.path = path
+        self.null_columns = null_columns
         with open(self.path, READ) as file:
             self.tables_metadata = json.load(file)
 
@@ -60,13 +62,13 @@ class AutoExpectations:
         """
         for item in self.tables_metadata:
             expectation_suite_name = item.get(EXPECTATION_SUITE)
-            columns_set = item.get(COLUMNS)
+            columns_set = self.null_columns
             context_root_dir = item.get(PATH)
             gx = GreatExpectations(context_root_dir, expectation_suite_name)
 
             for column in columns_set:
                 # setup "kwargs" value
-                kwargs = KWARGS_COLUMN_NOT_NULL.copy()
+                kwargs = KWARGS_COLUMN_NOT_NULL_OR_UNIQUE.copy()
                 kwargs[COLUMN] = kwargs[COLUMN].format(column)
 
                 # setup "meta" value
@@ -83,7 +85,8 @@ class AutoExpectations:
 
     def expect_compound_columns_unique(self) -> None:
         """
-        Add expectation type expecting the compound columns to be unique.
+        Add expectation type expecting the compound columns to be unique
+        or if compound 
 
         Returns:
             None
@@ -91,24 +94,44 @@ class AutoExpectations:
         for item in self.tables_metadata:
             # get expectation suite name, key columns, path of table to create expectation
             expectation_suite_name = item.get(EXPECTATION_SUITE)
-            keys_list = item.get(KEYS)
             context_root_dir = item.get(PATH)
-
+            keys_list = []
+            if KEYS in item and item[KEYS]:
+                keys_list = item[KEYS]
             # set up GreatExpectation:
             gx = GreatExpectations(context_root_dir, expectation_suite_name)
 
-            # setup "kwargs" value
-            KWARGS_COMPOUND_UNIQUE[COLUMN_LIST] = keys_list
-            kwargs = KWARGS_COMPOUND_UNIQUE
+            if len(keys_list) == 1:
+                # setup "kwargs" value
+                column = keys_list[0]
+                KWARGS_COLUMN_NOT_NULL_OR_UNIQUE[COLUMN] = column
+                kwargs = KWARGS_COLUMN_NOT_NULL_OR_UNIQUE
 
-            # setup "meta" value
-            meta = copy.deepcopy(META_COMPOUND_UNIQUE)
-            meta[NOTES][CONTENT] = meta[NOTES][CONTENT].format(keys_list)
+                # setup "meta" value
+                meta = copy.deepcopy(META_COLUMN_VALUE_UNIQUE)
+                meta[NOTES][CONTENT] = meta[NOTES][CONTENT].format(column)
 
-            gx.add_expectation_suite_(
-                expectation_type=EXPECT_COMPOUND_UNIQUE,
+                gx.add_expectation_suite_(
+                expectation_type= EXPECT_COLUMN_VALUES_UNIQUE,
                 kwargs=kwargs,
                 meta=meta
             )
 
-            gx.save_expectation_suite()
+                gx.save_expectation_suite()
+            elif len(keys_list) > 1:
+                # setup "kwargs" value
+                KWARGS_COMPOUND_UNIQUE[COLUMN_LIST] = keys_list
+                kwargs = KWARGS_COMPOUND_UNIQUE
+
+                # setup "meta" value
+                meta = copy.deepcopy(META_COMPOUND_UNIQUE)
+                meta[NOTES][CONTENT] = meta[NOTES][CONTENT].format(keys_list)
+
+                gx.add_expectation_suite_(
+                    expectation_type=EXPECT_COMPOUND_UNIQUE,
+                    kwargs=kwargs,
+                    meta=meta
+                )
+
+                gx.save_expectation_suite()
+
