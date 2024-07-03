@@ -2,9 +2,9 @@ from constant import *
 import sys
 sys.path.append(BASE_PATH)
 
-from samples.GX.expectation_cases import ExpectationCases
-from samples.GX.update_sub_tables_metadata import update_tables_metadata
-from samples.GX.get_metadata import TablesMetadata
+from samples.WeedTool.GreatExpectation.expectation_cases import ExpectationCases
+from samples.WeedTool.GreatExpectation.update_sub_tables_metadata import update_tables_metadata
+from samples.WeedTool.GreatExpectation.get_metadata import TablesMetadata
 
 
 def write_expectation(tables_metadata_path: str, null_columns: list) -> None:
