@@ -10,22 +10,19 @@ def to_dict(self) -> Dict[str, Any]:
         """
         
         entity_dict = super().to_dict()
-        entity_dict[COLUMNS] = self.columns
+        entity_dict['columns'] = self.columns
         return entity_dict
         
-# 2. Add COLUMNS to ->
 
-        -> from src.metadata_tool.core.entities.common.constants import PATH, QUALIFIED_NAME, COLUMNS
-
-# 3. Edit tables name list (tables_name) in main.py you want to write gx
+# 2. Edit tables name list (tables_name) in main.py you want to write gx
 
         E.g: tables_name = ["DIGIBANK",.....]
         
-# 4. Edit null_columns list (in main.py) that refers to the columns you want to check null
+# 3. Edit null_columns list (in main.py) that refers to the columns you want to check null
 
         E.g: null_columns = ["CIF_MASK", .....]
 
-# 5. After run main.py,following this:
+# 4. After run main.py,following this:
 
     PowerShell -> cd ..../DataModeling
     

@@ -1,5 +1,6 @@
 1. Add this function following the path:
 src -> metadata_tool -> core -> entities -> table.py ->
+
 def to_dict(self) -> Dict[str, Any]:
         """
         Convert TableEntity to a dictionary.
@@ -8,12 +9,12 @@ def to_dict(self) -> Dict[str, Any]:
             Dict[str, Any]: A dictionary representation of the TableEntity.
         """
         entity_dict = super().to_dict()
-        entity_dict[COLUMNS] = self.columns
- 
+        entity_dict['columns'] = self.columns
         return entity_dict
-2. Add COLUMNS to -> from src.metadata_tool.core.entities.common.constants import PATH, QUALIFIED_NAME
 
-3. Edit tables name list (tables_name) in main.py you want to write gx
+2. Edit tables name list (tables_name) in main.py you want to write gx
+
+3. Edit null_columns list (in main.py) refers to the columns you want to check null values
 
 4. After run main.py,following this:
     PowerShell -> cd ..../DataModeling
