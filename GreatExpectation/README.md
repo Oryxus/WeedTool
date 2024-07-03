@@ -16,6 +16,7 @@ def to_dict(self) -> Dict[str, Any]:
 
         E.g:
                 My BASE_PATH = "E:\Vietcombank\DataModeling"
+                
         ->      Your BASE_PATH = ".........\DataModeling"
         
 
