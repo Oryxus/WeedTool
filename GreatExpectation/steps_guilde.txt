@@ -12,22 +12,17 @@ def to_dict(self) -> Dict[str, Any]:
         entity_dict = super().to_dict()
         entity_dict['columns'] = self.columns
         return entity_dict
-# 2. Go constant.py to change the path includes the directiont to "./DataModeling" (BASE_PATH) on your device
-
-        E.g:
-                My BASE_PATH = "E:\Vietcombank\DataModeling"
-        ->      Your BASE_PATH = ".........\DataModeling"
         
 
-# 3. Edit tables name list (tables_name) in main.py you want to write gx
+# 2. Edit tables name list (tables_name) in main.py you want to write gx
 
         E.g: tables_name = ["DIGIBANK",.....]
         
-# 4. Edit null_columns list (in main.py) that refers to the columns you want to check null
+# 3. Edit null_columns list (in main.py) that refers to the columns you want to check null
 
         E.g: null_columns = ["CIF_MASK", .....]
 
-# 5. After run main.py,following this:
+# 4. After run main.py,following this:
 
     PowerShell -> cd ..../DataModeling
     

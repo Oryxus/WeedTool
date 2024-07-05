@@ -1,4 +1,3 @@
-BASE_PATH = r"E:\Vietcombank\DataModeling"
 NAME = "name"
 PATH = "path"
 COLUMNS = "columns"
